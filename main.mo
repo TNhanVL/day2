@@ -69,12 +69,17 @@ actor {
   };
 
   // Challenge 6
-  public func is_inside (t : Text, c : Char): async Bool {
+  public func is_inside(t : Text, c : Char): async Bool {
     for(char in t.chars()){
       if(c == char){
         return true;
       };
     };
     return false;
+  };
+
+  // Challenge 7
+  public func trim_whitespace(t : Text): async Text {
+    return Text.trim(t, #text " ");
   };
 };
