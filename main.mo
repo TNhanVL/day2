@@ -3,6 +3,7 @@ import Nat "mo:base/Nat";
 import Nat8 "mo:base/Nat8";
 import Text "mo:base/Text";
 import Char "mo:base/Char";
+import Prim "mo:prim";
 
 actor {
 
@@ -57,15 +58,7 @@ actor {
 
   // Challenge 5
   public func capitalize_text(t : Text): async Text {
-    var ans : Text = "";
-    for(char in t.chars()){
-      var t = Char.toNat32(char);
-      if(Char.isLowercase(char)){
-        t := t - 32;
-      };
-      ans := ans # Char.toText(Char.fromNat32(t));
-    };
-    return ans;
+    return Text.map(t, Prim.charToUpper);
   };
 
   // Challenge 6
