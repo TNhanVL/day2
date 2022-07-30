@@ -67,4 +67,14 @@ actor {
     };
     return ans;
   };
+
+  // Challenge 6
+  public func is_inside (t : Text, c : Char): async Bool {
+    for(char in t.chars()){
+      if(c == char){
+        return true;
+      };
+    };
+    return false;
+  };
 };
